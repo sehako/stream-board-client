@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import AddPageButton from '../static/AddPageButton'; // Import AddPageButton
 
 function BoardList() {
   // eslint-disable-next-line no-unused-vars
@@ -40,6 +41,7 @@ function BoardList() {
           })}
         </Col>
       </Row>
+      <AddPageButton /> {/* Render AddPageButton here */}
     </>
   );
 }
