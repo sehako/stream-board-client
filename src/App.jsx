@@ -7,7 +7,7 @@ function App() {
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <Nav></Nav>
       <Container
-        className="position-relative"
+        className="position-relative mt-5"
         style={{ height: '100%', overflowY: 'auto' }}
       >
         <BoardList></BoardList>

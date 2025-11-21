@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function Nav() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar fixed="top" bg="dark" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand href="">StreamBoard</Navbar.Brand>
       </Container>
