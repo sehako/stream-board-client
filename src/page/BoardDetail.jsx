@@ -1,18 +1,39 @@
+import { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import { postApi } from '../api/postApi';
 
 function BoardDetail() {
+  const { no } = useParams();
+  // eslint-disable-next-line no-unused-vars
+  const [boardInfo, setBoardInfo] = useState({
+    no: '',
+    title: '',
+    content: '',
+    createdAt: '',
+  });
+
+  useEffect(() => {
+    postApi
+      .getPostDetail(no)
+      .then((response) => response.data)
+      .then((response) => setBoardInfo(response.result));
+  }, []);
+
   return (
     <>
       <Row className="mt-4 mb-2">
         <Col>
           <Row>
             <Col>
-              <span className="fs-4 text-secondary">(제목 출력)</span>
+              <span className="fs-4 text-secondary">{boardInfo.title}</span>
             </Col>
           </Row>
           <Row>
             <Col>
-              <span className="text-secondary text-opacity-50">2024-01-01</span>
+              <span className="text-secondary text-opacity-50">
+                {boardInfo.createdAt.split('T')[0]}
+              </span>
             </Col>
             <Col
               xs={4}
@@ -27,7 +48,9 @@ function BoardDetail() {
       </Row>
 
       <Row className="border-top">
-        <Col className="mt-3 fs-5 text-dark text-break">(내용 출력)</Col>
+        <Col className="mt-3 fs-5 text-dark text-break">
+          {boardInfo.content}
+        </Col>
       </Row>
     </>
   );

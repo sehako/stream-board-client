@@ -5,4 +5,6 @@ export const postApi = {
     api.get('/post', {
       params: { cursor: cursor, size: size },
     }),
+
+  getPostDetail: (no) => api.get(`/post/${no}`),
 };
