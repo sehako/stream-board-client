@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import AddPageButton from '../static/AddPageButton'; // Import AddPageButton
 
 function BoardList() {
@@ -25,18 +26,20 @@ function BoardList() {
           )}
           {posts.map((post) => {
             return (
-              <Row key={post.no} className="mt-3">
-                <Col className="border ms-2 me-2">
-                  <Row className="p-2">
-                    <Col xs={8} className="text-secondary">
-                      {post.title}
-                    </Col>
-                    <Col xs={4} className="text-center text-dark">
-                      {post.date}
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
+              <Link to={`/post/${post.no}`}>
+                <Row key={post.no} className="mt-3">
+                  <Col className="border ms-2 me-2">
+                    <Row className="p-2">
+                      <Col xs={8} className="text-secondary">
+                        {post.title}
+                      </Col>
+                      <Col xs={4} className="text-center text-dark">
+                        {post.date}
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+              </Link>
             );
           })}
         </Col>
