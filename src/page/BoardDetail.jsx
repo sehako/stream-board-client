@@ -9,7 +9,7 @@ function BoardDetail() {
   const { no } = useParams();
   // eslint-disable-next-line no-unused-vars
   const [boardInfo, setBoardInfo] = useState({
-    no: '',
+    no: 0,
     title: '',
     content: '',
     createdAt: '',
