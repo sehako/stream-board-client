@@ -13,6 +13,7 @@ function App() {
       <Container
         className="position-relative mt-5"
         style={{ flex: 1, overflowY: 'auto' }}
+        id="scroll-container"
       >
         <Routes>
           <Route path="/" element={<BoardList />} />
