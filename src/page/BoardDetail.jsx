@@ -47,8 +47,13 @@ function BoardDetail() {
               className="text-secondary text-opacity-50 pt-1 text-end"
               style={{ fontSize: '0.8em' }}
             >
-              <Link to={`/post/${boardInfo.no}/edit`}>
-                <span>수정&nbsp;&nbsp;</span>
+              <Link
+                to={`/post/${boardInfo.no}/edit`}
+                className="link-underline link-underline-opacity-0"
+              >
+                <span className="text-secondary text-opacity-50">
+                  수정&nbsp;&nbsp;
+                </span>
               </Link>
               <span onClick={deletePost}>삭제</span>
             </Col>
