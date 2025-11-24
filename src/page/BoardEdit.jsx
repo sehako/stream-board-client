@@ -24,7 +24,7 @@ function BoardEdit() {
     e.preventDefault();
 
     postApi.patchPost(no, title, content);
-    navigate('/');
+    navigate(`/post/${no}`, { replace: true });
   };
 
   return (
