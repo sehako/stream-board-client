@@ -67,8 +67,11 @@ function BoardList() {
   }, [cursor, hasMore, size, isLoading]);
 
   useEffect(() => {
+    console.log('아니 뭐임');
     // eslint-disable-next-line react-hooks/set-state-in-effect
     loadPosts();
+
+    return () => setPost([]);
   }, []);
 
   useEffect(() => {
